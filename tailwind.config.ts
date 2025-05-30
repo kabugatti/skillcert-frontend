@@ -8,10 +8,23 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+                  purple: {
+          400: "#C084FC",
+        },
+        cyan: {
+          400: "#38BDF8",
+        },
+        gray: {
+          400: "#9CA3AF",
+          800: "#1F2937",
+          900: "#111827",
+        },
+          
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
