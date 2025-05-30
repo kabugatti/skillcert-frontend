@@ -84,235 +84,217 @@ export default function UserRegister() {
   const passwordStrength = getPasswordStrength(formData.password);
 
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
-      <Card className="w-full max-w-2xl bg-slate-800/50 border-slate-700/50 backdrop-blur-sm">
-        <CardContent className="p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name and Lastname Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-purple-400 font-medium">
-                  Name
-                </Label>
-                <div className="relative">
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange("name", e.target.value)
-                    }
-                    className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4"
-                  />
-                  {errors.name && (
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                      <AlertCircle className="h-4 w-4 text-red-400" />
-                    </div>
-                  )}
-                </div>
-                {errors.name && (
-                  <p className="text-red-400 text-sm mt-1">{errors.name}</p>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <Label
-                  htmlFor="lastname"
-                  className="text-purple-400 font-medium"
-                >
-                  Lastname
-                </Label>
-                <div className="relative">
-                  <Input
-                    id="lastname"
-                    type="text"
-                    placeholder="Lastname"
-                    value={formData.lastname}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange("lastname", e.target.value)
-                    }
-                    className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4"
-                  />
-                  {errors.lastname && (
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                      <AlertCircle className="h-4 w-4 text-red-400" />
-                    </div>
-                  )}
-                </div>
-                {errors.lastname && (
-                  <p className="text-red-400 text-sm mt-1">{errors.lastname}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Email Field */}
+    <div className="w-full">
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name and Lastname Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-purple-400 font-medium">
-                Email
+              <Label htmlFor="name" className="text-purple-400 font-medium">
+                Name
               </Label>
               <div className="relative">
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="Email"
-                  value={formData.email}
+                  id="name"
+                  type="text"
+                  placeholder="Name"
+                  value={formData.name}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    handleInputChange("email", e.target.value)
+                    handleInputChange("name", e.target.value)
                   }
                   className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4"
                 />
-                {errors.email && (
+                {errors.name && (
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                     <AlertCircle className="h-4 w-4 text-red-400" />
                   </div>
                 )}
-                {formData.email && !errors.email && (
-                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                  </div>
-                )}
               </div>
-              {errors.email && (
-                <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+              {errors.name && (
+                <p className="text-red-400 text-sm mt-1">{errors.name}</p>
               )}
             </div>
 
-            {/* Password and Confirm Password Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label
-                  htmlFor="password"
-                  className="text-purple-400 font-medium"
-                >
-                  Password
-                </Label>
-                <div className="relative">
-                  <Input
-                    id="password"
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange("password", e.target.value)
-                    }
-                    className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4 pr-10"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
-                  >
-                    {showPassword ? (
-                      <EyeOff className="h-4 w-4" />
-                    ) : (
-                      <Eye className="h-4 w-4" />
-                    )}
-                  </button>
-                </div>
-                {formData.password && (
-                  <div className="space-y-1">
-                    <div className="flex gap-1">
-                      {[1, 2, 3].map((level) => (
-                        <div
-                          key={level}
-                          className={`h-1 flex-1 rounded-full transition-colors ${
-                            level <= passwordStrength.strength
-                              ? level === 1
-                                ? "bg-red-400"
-                                : level === 2
-                                ? "bg-yellow-400"
-                                : "bg-green-400"
-                              : "bg-slate-600"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <p className="text-xs text-slate-400">
-                      Password strength: {passwordStrength.label}
-                    </p>
+            <div className="space-y-2">
+              <Label htmlFor="lastname" className="text-purple-400 font-medium">
+                Lastname
+              </Label>
+              <div className="relative">
+                <Input
+                  id="lastname"
+                  type="text"
+                  placeholder="Lastname"
+                  value={formData.lastname}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleInputChange("lastname", e.target.value)
+                  }
+                  className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4"
+                />
+                {errors.lastname && (
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                    <AlertCircle className="h-4 w-4 text-red-400" />
                   </div>
                 )}
-                {errors.password && (
-                  <p className="text-red-400 text-sm mt-1">{errors.password}</p>
-                )}
               </div>
+              {errors.lastname && (
+                <p className="text-red-400 text-sm mt-1">{errors.lastname}</p>
+              )}
+            </div>
+          </div>
 
-              <div className="space-y-2">
-                <Label
-                  htmlFor="confirmPassword"
-                  className="text-purple-400 font-medium"
-                >
-                  Confirm Password
-                </Label>
-                <div className="relative">
-                  <Input
-                    id="confirmPassword"
-                    type={showConfirmPassword ? "text" : "password"}
-                    placeholder="Confirm Password"
-                    value={formData.confirmPassword}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange("confirmPassword", e.target.value)
-                    }
-                    className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4 pr-10"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
-                  >
-                    {showConfirmPassword ? (
-                      <EyeOff className="h-4 w-4" />
-                    ) : (
-                      <Eye className="h-4 w-4" />
-                    )}
-                  </button>
+          {/* Email Field */}
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-purple-400 font-medium">
+              Email
+            </Label>
+            <div className="relative">
+              <Input
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  handleInputChange("email", e.target.value)
+                }
+                className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4"
+              />
+              {errors.email && (
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                  <AlertCircle className="h-4 w-4 text-red-400" />
                 </div>
-                {formData.confirmPassword &&
-                  formData.password === formData.confirmPassword && (
-                    <div className="flex items-center gap-1 text-green-400 text-sm">
-                      <CheckCircle className="h-3 w-3" />
-                      Passwords match
-                    </div>
+              )}
+              {formData.email && !errors.email && (
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                  <CheckCircle className="h-4 w-4 text-green-400" />
+                </div>
+              )}
+            </div>
+            {errors.email && (
+              <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+            )}
+          </div>
+
+          {/* Password and Confirm Password Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="password" className="text-purple-400 font-medium">
+                Password
+              </Label>
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  value={formData.password}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleInputChange("password", e.target.value)
+                  }
+                  className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4 pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-4 w-4" />
+                  ) : (
+                    <Eye className="h-4 w-4" />
                   )}
-                {errors.confirmPassword && (
-                  <p className="text-red-400 text-sm mt-1">
-                    {errors.confirmPassword}
-                  </p>
-                )}
+                </button>
               </div>
-            </div>
-
-            {/* Submit Button */}
-            <div className="flex justify-end pt-4">
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Creating Account...
+              {formData.password && (
+                <div className="space-y-1">
+                  <div className="flex gap-1">
+                    {[1, 2, 3].map((level) => (
+                      <div
+                        key={level}
+                        className={`h-1 flex-1 rounded-full transition-colors ${
+                          level <= passwordStrength.strength
+                            ? level === 1
+                              ? "bg-red-400"
+                              : level === 2
+                              ? "bg-yellow-400"
+                              : "bg-green-400"
+                            : "bg-slate-600"
+                        }`}
+                      />
+                    ))}
                   </div>
-                ) : (
-                  "Register"
-                )}
-              </Button>
+                  <p className="text-xs text-slate-400">
+                    Password strength: {passwordStrength.label}
+                  </p>
+                </div>
+              )}
+              {errors.password && (
+                <p className="text-red-400 text-sm mt-1">{errors.password}</p>
+              )}
             </div>
-          </form>
 
-          {/* Additional Links */}
-          {/* <div className="text-center mt-6 pt-6 border-t border-slate-700/50">
-            <p className="text-slate-400 text-sm">
-              Already have an account?{" "}
-              <button className="text-purple-400 hover:text-purple-300 font-medium transition-colors">
-                Sign in
-              </button>
-            </p>
-          </div> */}
-        </CardContent>
-      </Card>
+            <div className="space-y-2">
+              <Label
+                htmlFor="confirmPassword"
+                className="text-purple-400 font-medium"
+              >
+                Confirm Password
+              </Label>
+              <div className="relative">
+                <Input
+                  id="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  value={formData.confirmPassword}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleInputChange("confirmPassword", e.target.value)
+                  }
+                  className="bg-slate-700/50 border-purple-500/30 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400/20 h-12 rounded-full px-4 pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
+                >
+                  {showConfirmPassword ? (
+                    <EyeOff className="h-4 w-4" />
+                  ) : (
+                    <Eye className="h-4 w-4" />
+                  )}
+                </button>
+              </div>
+              {formData.confirmPassword &&
+                formData.password === formData.confirmPassword && (
+                  <div className="flex items-center gap-1 text-green-400 text-sm">
+                    <CheckCircle className="h-3 w-3" />
+                    Passwords match
+                  </div>
+                )}
+              {errors.confirmPassword && (
+                <p className="text-red-400 text-sm mt-1">
+                  {errors.confirmPassword}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-end pt-4">
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  Creating Account...
+                </div>
+              ) : (
+                "Register"
+              )}
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
