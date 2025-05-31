@@ -48,7 +48,7 @@ export default function MyCourses() {
     <div className="bg-slate-900 min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         {/* Section Title */}
-        <h1 className="text-2xl font-semibold text-purple-400 mb-8">
+        <h1 className="text-3xl font-semibold text-purple-400 mb-10">
           My courses
         </h1>
 
