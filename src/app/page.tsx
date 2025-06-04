@@ -1,15 +1,14 @@
-
 import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
 
-import Footer from "../components/footer"
-
+import Footer from "../components/footer";
+import { CourseSideBar } from "./coursesPage/components/courseSideBar";
 
 export default function Page() {
   return (
-
     <div className="">
       <CoursesOverview />
+      <CourseSideBar />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -102,10 +101,12 @@ export default function Page() {
           />
           Go to nextjs.org →
         </a>
-      </footer> *
-    <div>
-      <h1>Welcome to SkillCert</h1>
-      <Footer />
+      </footer>{" "}
+      *
+      <div>
+        <h1>Welcome to SkillCert</h1>
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
