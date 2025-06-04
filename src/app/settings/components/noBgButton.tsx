@@ -1,3 +1,4 @@
+"use client";
 import { ReactNode } from "react";
 
 interface NoBgButtonProps {
@@ -21,7 +22,7 @@ export default function NoBgButton({
       disabled={disabled}
       className={`
         flex items-center justify-center gap-2 
-        text-purple-500 font-medium text-lg
+        text-[#9333EA] font-medium text-lg
         bg-transparent border-none 
         hover:text-purple-400 
         disabled:text-purple-300 disabled:cursor-not-allowed
