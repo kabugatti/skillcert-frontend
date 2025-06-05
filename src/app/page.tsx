@@ -1,13 +1,10 @@
-
 import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
-
-import Footer from "../components/footer"
-
+// import LearnMoreButton from "../components/learnMoreButton";
+import Footer from "../components/footer";
 
 export default function Page() {
   return (
-
     <div className="">
       <CoursesOverview />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -102,11 +99,11 @@ export default function Page() {
           />
           Go to nextjs.org →
         </a>
-      </footer> *
-    <div>
-      <h1>Welcome to SkillCert</h1>
-      <Footer />
+      </footer>
+      <div>
+        <h1>Welcome to SkillCert</h1>
+        <Footer />
+      </div>
     </div>
-    </div>
-  )
+  );
 }
