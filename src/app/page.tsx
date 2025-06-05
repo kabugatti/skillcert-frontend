@@ -1,13 +1,10 @@
-
 import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
-import LearnMoreButton from "../components/learnMoreButton"
-import Footer from "../components/footer"
-
+// import LearnMoreButton from "../components/learnMoreButton";
+import Footer from "../components/footer";
 
 export default function Page() {
   return (
-
     <div className="">
       <CoursesOverview />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -108,6 +105,5 @@ export default function Page() {
         <Footer />
       </div>
     </div>
-    </div>
-  )
+  );
 }
