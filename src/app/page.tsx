@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
-import { Navbar } from "../components/navbar";
 import Footer from "../components/footer"
 
 
@@ -8,9 +7,7 @@ export default function Page() {
   return (
 
     <div className="">
-      <Navbar variant="navbar1" />
-      <Navbar variant ="navbar2" />
-      
+     
       <CoursesOverview />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
