@@ -26,9 +26,9 @@ export const links = [
 const QuickActions: React.FC = () => (
   <div className='w-full'>
     <h3 className="text-lg font-bold text-purple-700 mb-3">Quick Actions</h3>
-    <div className="bg-[#23283b] py-6 px-24 flex flex-col gap-4">
+    <div className="bg-[#23283b] p-6 flex flex-col items-center gap-4">
       {links.map((link, idx) => (
-        <button key={idx} className="bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-full font-semibold transition">
+        <button key={idx} className="md:w-[80%] w-full bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-full font-semibold transition">
           {link.label}
         </button>
       ))}

@@ -30,7 +30,7 @@ const TopCourses: React.FC<TopCoursesProps> = ({ courses }) => (
         All Courses <ArrowRight className="w-4 h-4" />
       </Link>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {courses.map((course, idx) => (
         <div key={idx} className="bg-gray-800 rounded-2xl overflow-hidden shadow-lg flex flex-col border border-gray-700 cursor-pointer">
           <div className="relative h-[200px] w-full overflow-hidden rounded-t-2xl bg-[#181e2a]">
