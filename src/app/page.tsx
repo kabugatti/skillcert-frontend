@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
+import LearnMoreButton from "../components/learnMoreButton"
+import Footer from "../components/footer"
 
-import Footer from "../components/footer";
-import { CourseSideBar } from "./coursesPage/components/courseSideBar";
 
 export default function Page() {
   return (
@@ -101,12 +101,14 @@ export default function Page() {
           />
           Go to nextjs.org →
         </a>
-      </footer>{" "}
-      *
+
+      </footer>
       <div>
         <h1>Welcome to SkillCert</h1>
         <Footer />
       </div>
+
+    </div>
     </div>
   );
 }
