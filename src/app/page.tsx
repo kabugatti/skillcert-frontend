@@ -1,13 +1,7 @@
 import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
-<<<<<<< HEAD
-import LearnMoreButton from "../components/learnMoreButton";
+// import LearnMoreButton from "../components/learnMoreButton";
 import Footer from "../components/footer";
-=======
-import LearnMoreButton from "../components/learnMoreButton"
-import Footer from "../components/footer"
-
->>>>>>> 0248ac89bb15f43c38c3d7f930145578ee65af16
 
 export default function Page() {
   return (
@@ -110,10 +104,6 @@ export default function Page() {
         <h1>Welcome to SkillCert</h1>
         <Footer />
       </div>
-<<<<<<< HEAD
-=======
-    </div>
->>>>>>> 0248ac89bb15f43c38c3d7f930145578ee65af16
     </div>
   );
 }
