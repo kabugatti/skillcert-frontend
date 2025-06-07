@@ -1,12 +1,10 @@
 import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
-import { Navbar } from "../components/navbar";
-import Footer from "../components/footer"
-
+// import LearnMoreButton from "../components/learnMoreButton";
+import Footer from "../components/footer";
 
 export default function Page() {
   return (
-
     <div className="">
       <Navbar variant="navbar1" />
       <Navbar variant ="navbar2" />
@@ -105,11 +103,11 @@ export default function Page() {
           />
           Go to nextjs.org →
         </a>
-      </footer> *
-    <div>
-      <h1>Welcome to SkillCert</h1>
-      <Footer />
+      </footer>
+      <div>
+        <h1>Welcome to SkillCert</h1>
+        <Footer />
+      </div>
     </div>
-    </div>
-  )
+  );
 }
