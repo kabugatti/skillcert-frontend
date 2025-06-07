@@ -2,14 +2,12 @@ import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
 
 import Footer from "../components/footer";
-import SidebarSettings from "./settings/components/sidebarSettings";
-import NoBgButton from "./settings/components/noBgButton";
+
 
 export default function Page() {
   return (
     <div className="">
       <CoursesOverview />
-      <NoBgButton >Button</NoBgButton>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
