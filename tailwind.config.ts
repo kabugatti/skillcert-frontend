@@ -15,10 +15,14 @@ export default {
   			foreground: 'hsl(var(--foreground))',
                   purple: {
           400: "#C084FC",
+		  600: "#9333EA",
         },
         cyan: {
           400: "#38BDF8",
         },
+		pink: {
+			700: "#BE185D",
+		},
         gray: {
           400: "#9CA3AF",
           800: "#1F2937",
