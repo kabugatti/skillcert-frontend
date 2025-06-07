@@ -7,6 +7,7 @@ export default function Page() {
   return (
     <div className="">
       <CoursesOverview />
+      <CourseSideBar />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -99,12 +100,16 @@ export default function Page() {
           />
           Go to nextjs.org →
         </a>
+
       </footer>
       <div>
         <h1>Welcome to SkillCert</h1>
         <Footer />
       </div>
+
     </div>
+    </div>
+
   );
 
 }
