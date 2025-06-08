@@ -109,6 +109,12 @@
   * {
     @apply border-border;
   }
+
+  .register-label{
+    @apply block text-base sm:text-[21px] pb-2 font-medium text-purple-400
+  }
+
+
   body {
     @apply bg-gray-900 text-gray-400;
   }
