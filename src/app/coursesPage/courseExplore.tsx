@@ -1,11 +1,10 @@
 "use client";
 import React, { useState, useMemo } from "react";
-import { Search, Star, Filter, X, Clock } from "lucide-react";
+import { Search, Filter, X } from "lucide-react";
 import CourseCard from "./components/courseCard";
 import { levels } from "@/lib/interface";
 import { categories } from "@/lib/interface";
 import { Course, CourseLevel, CourseCategory } from "@/lib/interface";
-
 
 const coursesData: Course[] = [
 	{
@@ -150,7 +149,6 @@ const coursesData: Course[] = [
 		price: 799.99,
 	},
 ];
-
 
 const CourseExplore: React.FC = () => {
 	const [searchTerm, setSearchTerm] = useState<string>("");
@@ -312,7 +310,7 @@ const CourseExplore: React.FC = () => {
 												{selectedLevels.includes(level) && (
 													<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 														<svg
-																className="w-4 h-4 text-white absolute top-[3px]"
+															className="w-4 h-4 text-white absolute top-[3px]"
 															fill="currentColor"
 															viewBox="0 0 20 20"
 														>
