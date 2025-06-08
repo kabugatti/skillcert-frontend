@@ -6,6 +6,9 @@ import Footer from "../components/footer";
 export default function Page() {
   return (
     <div className="">
+      <Navbar variant="navbar1" />
+      <Navbar variant ="navbar2" />
+      
       <CoursesOverview />
       <CourseSideBar />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -53,6 +56,7 @@ export default function Page() {
             Read our docs
           </a>
         </div>
+      
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
