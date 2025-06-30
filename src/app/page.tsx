@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CoursesOverview } from "./coursesPage/coursesOverview";
 // import LearnMoreButton from "../components/learnMoreButton";
 import Footer from "../components/footer";
-import ResumeModal from "./coursesPage/coursesPreview/components/resumeModal";
+
 
 export default function Page() {
   return (
@@ -11,7 +11,6 @@ export default function Page() {
       <CoursesOverview />
       {/* <CourseSideBar /> */}
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <ResumeModal/>
         <Image
           className="dark:invert"
           src="/next.svg"
