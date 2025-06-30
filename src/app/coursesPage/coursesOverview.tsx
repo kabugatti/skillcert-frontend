@@ -1,6 +1,12 @@
+"use client";
 import Image from "next/image";
 import circlePlay from "@/../public/images/CircledPlay.png";
+import { useState } from "react";
+import ContentModal from "./coursesPreview/components/contentModal";
+
 export const CoursesOverview = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="py-24 flex flex-col items-center justify-center gap-12 bg-gray-900 px-4">
       <div className="space-y-12 w-full max-w-7xl  flex flex-col justify-center ">
@@ -13,7 +19,37 @@ export const CoursesOverview = () => {
           <CourseCard />
           <CourseCard />
         </div>
+
+        {/* Preview Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => setShowModal(true)}
+            className="bg-[#9D174D] text-white font-normal rounded-[25px] px-8 py-3 hover:bg-[#8B155C] transition-colors"
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "16px",
+              lineHeight: "100%",
+            }}
+          >
+            Preview Course Content
+          </button>
+        </div>
       </div>
+
+      {/* ContentModal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 z-10"
+            >
+              ×
+            </button>
+            <ContentModal />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
