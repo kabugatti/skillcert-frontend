@@ -3,6 +3,7 @@ import { CoursesOverview } from "./coursesPage/coursesOverview";
 // import LearnMoreButton from "../components/learnMoreButton";
 import Footer from "../components/footer";
 
+
 export default function Page() {
   return (
     <div className="">
