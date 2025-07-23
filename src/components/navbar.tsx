@@ -11,15 +11,15 @@ interface NavbarProps {
 export function Navbar({ variant = "navbar1" }: NavbarProps) {
   return (
     <nav className="bg-gray-800 px-6 py-4">
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <div className="flex items-center justify-between max-w-5xl mx-auto">
         {/* Logo and Explore */}
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
             {/* Logo */}
             <img
-              src="/skillcert-logo.webp" 
+              src="/nabvar-logo.svg" 
               alt="Skillcert Logo"
-              className="w-10 h-10 rounded-full object-cover"
+              className="w-10 h-10"
             />
             <span className="text-2xl font-medium text-purple-400">Skillcert</span>
           </div>
