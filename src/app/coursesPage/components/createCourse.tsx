@@ -18,7 +18,7 @@ export default function CreateCourse() {
       <DialogTrigger>Create Course</DialogTrigger>
       <DialogContent className="bg-gray-950 border-none sm:rounded-2xl gap-[26px]">
         <DialogHeader>
-          <DialogTitle className="text-semibold text-[20px] text-white">Create a New Course</DialogTitle>
+          <DialogTitle className="text-semibold text-[20px] text-white">Create New Course</DialogTitle>
           <DialogDescription className="!-mt-0.5 text-base text-gray-300">
             Fill in the details to create your new course
           </DialogDescription>
