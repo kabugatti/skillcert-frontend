@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 
+// Data placeholders
+const totalCourses = 0
+const publishedCourses = 0
+const totalStudents = 0
+const totalRevenue = 0.00
+const averageRating: number | null = null 
 
 export default function InstructorDashboard() {
   const [activeTab, setActiveTab] = useState("overview")
@@ -23,8 +29,8 @@ export default function InstructorDashboard() {
                   <BookOpen className="h-4 w-4 " />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">0</div>
-                  <p className="text-xs mt-2 text-[#D1D5DB]">0 published</p>
+                  <div className="text-2xl font-bold">{totalCourses}</div>
+                  <p className="text-xs mt-2 text-[#D1D5DB]">{publishedCourses} published</p>
                 </CardContent>
               </Card>
 
@@ -34,7 +40,7 @@ export default function InstructorDashboard() {
                   <Users className="h-4 w-4 " />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">0</div>
+                  <div className="text-2xl font-bold">{totalStudents}</div>
                   <p className="text-xs mt-2 text-[#D1D5DB]">Across all courses</p>
                 </CardContent>
               </Card>
@@ -45,7 +51,7 @@ export default function InstructorDashboard() {
                   <DollarSign className="h-4 w-4 " />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">$0.00</div>
+                  <div className="text-2xl font-bold">${totalRevenue.toFixed(2)}</div>
                   <p className="text-xs mt-2 text-[#D1D5DB]">Lifetime earnings</p>
                 </CardContent>    
               </Card>
@@ -56,7 +62,7 @@ export default function InstructorDashboard() {
                   <Clock className="h-4 w-4 " />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">—</div>
+                  <div className="text-2xl font-bold">{averageRating ? averageRating.toFixed(1) : "—"}</div>
                   <p className="text-xs mt-2 text-[#D1D5DB]">No ratings yet</p>
                 </CardContent>
               </Card>
@@ -139,7 +145,7 @@ export default function InstructorDashboard() {
                     >
                       <div className="flex gap-x-2 items-center">
                           <BookOpen className="h-4 mt-1 w-4 " />
-                          <span>My courses (0)</span>
+                          <span>My courses ({totalCourses})</span>
                       </div>
                     </button>
                 </nav>
