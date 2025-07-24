@@ -20,7 +20,7 @@ export default function CreateCourse() {
         <DialogHeader>
           <DialogTitle className="text-semibold text-[20px] text-white">Create a New Course</DialogTitle>
           <DialogDescription className="!-mt-0.5 text-base text-gray-300">
-            Fill in the details to create a new course
+            Fill in the details to create your new course
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-6">
