@@ -6,7 +6,7 @@ import Card from "@/components/welcomePage/Card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import CourseExplorationSection from "./components/welcomepage/courseExplorationSection";
-import HeroSection from "./components/HeroSection";
+import HeroSection from "./components/welcomepage/heroSection";
 
 const welcomePage = () => {
   return (
