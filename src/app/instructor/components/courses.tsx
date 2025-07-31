@@ -35,7 +35,7 @@ const Courses: React.FC<CoursesProps> = ({
   // Loading state
   if (isLoading) {
     return (
-      <main className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-[#0f0a15]">
+      <main className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <p className="text-white">Loading courses...</p>
       </main>
     );
@@ -109,9 +109,7 @@ const Courses: React.FC<CoursesProps> = ({
   );
 
   return (
-    <main
-      className={`min-h-screen px-4 sm:px-6 lg:px-8 bg-[#0f0a15] ${className}`}
-    >
+    <main className={`min-h-screen px-4 sm:px-6 lg:px-8 ${className}`}>
       {/* Content Wrapper */}
       <div className="max-w-7xl mx-auto py-8 lg:py-12">
         {/* Header section */}
