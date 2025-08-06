@@ -1,1 +1,1 @@
-export default function courseHeader() {}
+export default function CourseHeader() {}
