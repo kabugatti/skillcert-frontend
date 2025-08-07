@@ -14,7 +14,11 @@ export interface featuredCourseProps {
 }
 
 export const levels: CourseLevel[] = ["Beginner", "Intermediate", "Advanced"];
-type CourseCategory = "Web Development" | "Data Science" | "Design & UI/UX" | "DevOps & Cloud";
+type CourseCategory =
+  | "Web Development"
+  | "Data Science"
+  | "Design & UI/UX"
+  | "DevOps & Cloud";
 type CourseLevel = "Beginner" | "Intermediate" | "Advanced";
 
 interface Course {
@@ -27,6 +31,7 @@ interface Course {
   description: string;
   duration: string;
   price: number;
+  img?: string;
 }
 
 export const categories: CourseCategory[] = [
@@ -46,4 +51,10 @@ interface FilterState {
   selectedLevels: CourseLevel[];
 }
 
-export type {CourseCardProps, CourseCategory, CourseLevel, Course, FilterState}
+export type {
+  CourseCardProps,
+  CourseCategory,
+  CourseLevel,
+  Course,
+  FilterState,
+};
